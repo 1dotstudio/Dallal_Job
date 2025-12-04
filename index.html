@@ -6,6 +6,15 @@
   <title>דרושים</title>
   <meta name="description" content="שוק דלאל מגייס קופאים וקופאיות וסדרנים וסדרניות לעבודה במשמרות כולל שישי שבת.">
 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ED70P7KPPP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ED70P7KPPP');
+  </script>
+
   <style>
     :root{
       --green:#0B7A4B;
@@ -56,15 +65,17 @@
 
     .subtitle{
       text-align:center;
-      font-size:0.98rem;
+      font-size:1.02rem;
+      font-weight:500;
       color:var(--muted);
-      margin-bottom:8px;
+      margin-bottom:6px;
     }
 
     .tagline{
       text-align:center;
       font-size:1.02rem;
       font-weight:500;
+      color:var(--muted);
       margin-bottom:10px;
     }
 
@@ -156,8 +167,8 @@
       </div>
 
       <h1>דרושים</h1>
-      <div class="subtitle" style="font-size:1.02rem; font-weight:500; color:var(--muted); margin-bottom:6px;">קופאים וקופאיות, סדרנים וסדרניות</div>
-      <div class="tagline" style="color:var(--muted);">לסניפי שוק דלאל בחיפה</div>
+      <div class="subtitle">קופאים וקופאיות, סדרנים וסדרניות</div>
+      <div class="tagline">לסניפי שוק דלאל בחיפה</div>
       <div class="note-line">העבודה במשמרות כולל שישי שבת · תנאים טובים למתאימים</div>
 
       <form id="jobForm">
@@ -208,7 +219,7 @@
 
   <script>
     (function(){
-      const form = document.getElementById('jobForm');
+      const form  = document.getElementById('jobForm');
       const WA_BASE = 'https://wa.me/972503844529';
 
       form.addEventListener('submit', function(e){
@@ -230,16 +241,25 @@
           'שם: ' + name,
           'מספר טלפון: ' + phone,
           'גיל: ' + age,
-          'תפקיד: ' + role,
-          (city ? 'עיר מגורים: ' + city : '')
+          'תפקיד: ' + role
         ];
 
-        if(city){
+        if (city) {
           lines.push('עיר מגורים: ' + city);
         }
 
         const message = lines.join('\n');
         const url = WA_BASE + '?text=' + encodeURIComponent(message);
+
+        // אירוע מעקב לגוגל אנליטיקס על לחיצה על שליחת פרטים
+        if (typeof gtag === 'function') {
+          gtag('event', 'job_form_whatsapp_click', {
+            event_category: 'Jobs',
+            event_label: 'Dalal - WhatsApp jobs form',
+            value: 1
+          });
+        }
+
         window.open(url, '_blank');
       });
     })();
