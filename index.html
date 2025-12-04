@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>דרושים</title>
+  <meta name="description" content="שוק דלאל מגייס קופאים וקופאיות וסדרנים וסדרניות לעבודה במשמרות כולל שישי שבת.">
+
+  <style>
+    :root{
+      --green:#0B7A4B;
+      --orange:#F6A623;
+      --bg:#F7F7F2;
+      --card:#FFFFFF;
+      --text:#222222;
+      --muted:#666666;
+      --border:#E2E2DD;
+    }
+
+    *{ box-sizing:border-box; }
+
+    body{
+      margin:0;
+      font-family:"Heebo",system-ui,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      display:flex;
+      justify-content:center;
+      padding:32px 16px;
+    }
+
+    .wrap{ width:100%; max-width:520px; }
+
+    .card{
+      background:var(--card);
+      border-radius:16px;
+      padding:24px 20px 28px;
+      box-shadow:0 8px 22px rgba(0,0,0,0.06);
+      border:1px solid var(--border);
+    }
+
+    .logo-wrap{
+      display:flex;
+      justify-content:center;
+      margin-bottom:16px;
+    }
+
+    .logo{ max-width:180px; height:auto; }
+
+    h1{
+      text-align:center;
+      font-size:1.6rem;
+      margin:0 0 6px;
+      color:var(--green);
+    }
+
+    .subtitle{
+      text-align:center;
+      font-size:0.98rem;
+      color:var(--muted);
+      margin-bottom:8px;
+    }
+
+    .tagline{
+      text-align:center;
+      font-size:1.02rem;
+      font-weight:500;
+      margin-bottom:10px;
+    }
+
+    .note-line{
+      text-align:center;
+      font-size:0.9rem;
+      color:var(--green);
+      font-weight:600;
+      margin-bottom:18px;
+    }
+
+    form{ margin-top:4px; }
+
+    .field{ margin-bottom:14px; }
+
+    label{
+      display:block;
+      font-size:0.9rem;
+      margin-bottom:4px;
+      color:var(--text);
+    }
+
+    input,select{
+      width:100%;
+      padding:10px 11px;
+      border-radius:8px;
+      border:1px solid var(--border);
+      font-family:inherit;
+      font-size:0.95rem;
+      outline:none;
+      background:#FDFDF9;
+      direction:rtl;
+      text-align:right;
+    }
+
+    input:focus,select:focus{
+      border-color:var(--green);
+      box-shadow:0 0 0 1px rgba(11,122,75,0.16);
+      background:#FFFFFF;
+    }
+
+    .btn-wrap{ margin-top:8px; }
+
+    button{
+      width:100%;
+      border:none;
+      border-radius:999px;
+      padding:11px 14px;
+      font-family:inherit;
+      font-size:1rem;
+      font-weight:600;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      background:var(--green);
+      color:#ffffff;
+    }
+
+    button:active{ transform:scale(0.99); }
+
+    .whatsapp-note{
+      text-align:center;
+      font-size:0.86rem;
+      color:var(--muted);
+      margin-top:10px;
+    }
+
+    .footer{
+      margin-top:16px;
+      text-align:center;
+      font-size:0.8rem;
+      color:var(--muted);
+    }
+
+    @media (min-width:768px){
+      body{ padding:40px 16px; }
+      .card{ padding:28px 26px 30px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <div class="logo-wrap">
+        <!-- להחליף ללוגו האמיתי -->
+        <img src="dallal-logo.png" alt="שוק דלאל" class="logo">
+      </div>
+
+      <h1>דרושים</h1>
+      <div class="subtitle" style="font-size:1.02rem; font-weight:500; color:var(--muted); margin-bottom:6px;">קופאים וקופאיות, סדרנים וסדרניות</div>
+      <div class="tagline" style="color:var(--muted);">לסניפי שוק דלאל בחיפה</div>
+      <div class="note-line">העבודה במשמרות כולל שישי שבת · תנאים טובים למתאימים</div>
+
+      <form id="jobForm">
+        <div class="field">
+          <label for="name">שם מלא*</label>
+          <input id="name" name="name" type="text" required placeholder="שם מלא">
+        </div>
+
+        <div class="field">
+          <label for="phone">טלפון ליצירת קשר*</label>
+          <input id="phone" name="phone" type="tel" required placeholder="טלפון ליצירת קשר" inputmode="tel">
+        </div>
+
+        <div class="field">
+          <label for="age">גיל*</label>
+          <input id="age" name="age" type="number" min="16" max="80" required placeholder="גיל">
+        </div>
+
+        <div class="field">
+          <label for="role">תפקיד מבוקש*</label>
+          <select id="role" name="role" required>
+            <option value="" selected disabled>בחרו תפקיד</option>
+            <option value="קופאי/ת">קופאי/ת</option>
+            <option value="סדרן/ית">סדרן/ית</option>
+            <option value="לא משנה / לפי צורך">לא משנה / לפי צורך</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="city">עיר מגורים</label>
+          <input id="city" name="city" type="text" placeholder="עיר מגורים">
+        </div>
+
+        <div class="btn-wrap">
+          <button type="submit">שליחת פרטים בוואטסאפ</button>
+        </div>
+
+        <div class="whatsapp-note">
+          בלחיצה תיפתח הודעה מוכנה בוואטסאפ למשרדי שוק דלאל.
+        </div>
+      </form>
+
+      <div class="footer">
+        שוק דלאל – סופר שחיפאים אוהבים
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      const form = document.getElementById('jobForm');
+      const WA_BASE = 'https://wa.me/972503844529';
+
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+
+        const name  = document.getElementById('name').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const age   = document.getElementById('age').value.trim();
+        const role  = document.getElementById('role').value;
+        const city  = document.getElementById('city').value.trim();
+
+        if(!name || !phone || !age || !role){
+          alert('נא למלא שם מלא, טלפון, גיל ותפקיד מבוקש');
+          return;
+        }
+
+        const lines = [
+          'שלום, ראיתי שאתם מחפשים עובדים.',
+          'שם: ' + name,
+          'מספר טלפון: ' + phone,
+          'גיל: ' + age,
+          'תפקיד: ' + role,
+          (city ? 'עיר מגורים: ' + city : '')
+        ];
+
+        if(city){
+          lines.push('עיר מגורים: ' + city);
+        }
+
+        const message = lines.join('\n');
+        const url = WA_BASE + '?text=' + encodeURIComponent(message);
+        window.open(url, '_blank');
+      });
+    })();
+  </script>
+</body>
+</html>
